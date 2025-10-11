@@ -6,9 +6,11 @@ interface Props {
             description: string;
         }[];
     };
+    onClick: (name: string, done: boolean) => void;
+    state: string[];
 }
 
-export default function Category({ category }: Props) {
+export default function Category({ category, onClick, state }: Props) {
     const renderDescription = (description: string) => {
         // Replace text between backticks with styled code
         return description.split(/`(.*?)`/).map((part, index) =>
@@ -23,6 +25,10 @@ export default function Category({ category }: Props) {
                 part
             ),
         );
+    };
+
+    const isInState = (title: string) => {
+        return state.some((value) => value === title);
     };
 
     return (
@@ -40,6 +46,10 @@ export default function Category({ category }: Props) {
                     </p>
 
                     <input
+                        onChange={(e) =>
+                            onClick?.(item.title, e.currentTarget.checked)
+                        }
+                        checked={isInState(item.title)}
                         type="checkbox"
                         className="hidden"
                         name={item.title}
