@@ -5,7 +5,7 @@ export default function Home() {
         <div className="w-full min-h-screen text-white flex items-center justify-center">
             <div className="container py-10">
                 <h1 className="mb-8 text-4xl font-bol text-center">
-                    Select Project
+                    Select Project Type
                 </h1>
 
                 <div className="flex gap-10 items-center justify-center">
