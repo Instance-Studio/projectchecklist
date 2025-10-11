@@ -1,0 +1,81 @@
+{
+    "items": [
+        {
+            "name": "Code Quality & Standards",
+            "items": [
+                {
+                    "title": "Linting Passed",
+                    "description": "lint command runs with no errors or warnings using `ddev pnpm lint`"
+                },
+                {
+                    "title": "Code Formatting Applied",
+                    "description": "formatting is consistent across all files `ddev pnpm format`"
+                },
+                {
+                    "title": "No Console Logs in Production",
+                    "description": "Remove or properly gate console.log statements for production"
+                }
+            ]
+        },
+        {
+            "name": "Build & Deployment",
+            "items": [
+                {
+                    "title": "Successful Production Build",
+                    "description": "`pnpm run build` completes without errors or warnings"
+                },
+                {
+                    "title": "Environment Variables",
+                    "description": "All required environment variables are properly set for build and are present in the .env.example file"
+                }
+            ]
+        },
+        {
+            "name": "Performance & SEO",
+            "items": [
+                {
+                    "title": "Lighthouse Scores (Mobile)",
+                    "description": "Performance score > 75, Accessibility > 90, Best Practices > 90, SEO > any"
+                },
+                {
+                    "title": "Meta Tags Verification",
+                    "description": "All pages have proper meta tags, titles, and Open Graph data"
+                },
+                {
+                    "title": "Image Optimization",
+                    "description": "Images use Next.js Image component with proper sizing"
+                },
+                {
+                    "title": "Sitemap Generation",
+                    "description": "Verify XML sitemap is automatically generated at `/sitemap_index.xml` and includes all important pages"
+                },
+                {
+                    "title": "Sitemap Accessibility",
+                    "description": "Check that `robots.txt` file points to the sitemap and it's properly accessible to search engines"
+                }
+            ]
+        },
+        {
+            "name": "Security & Best Practices",
+            "items": [
+                {
+                    "title": "Sensitive Data Exposure",
+                    "description": "No API keys or sensitive data exposed to client-side"
+                }
+            ]
+        },
+        {
+            "name": "Browser & Device Testing",
+            "items": [
+                {
+                    "title": "Cross-Browser Testing",
+                    "description": "Test in major browsers (Chrome, Firefox, Safari, Edge)"
+                },
+                {
+                    "title": "Mobile Responsiveness",
+                    "description": "Layout works correctly on mobile devices"
+                }
+            ]
+        }
+    ]
+}
