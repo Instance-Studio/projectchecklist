@@ -1,118 +1,122 @@
 {
-    "items": [
+  "items": [
+    {
+      "name": "Code Quality & Standards",
+      "items": [
         {
-            "name": "Code Quality & Standards",
-            "items": [
-                {
-                    "title": "PHP Stan Passed (LumberMill)",
-                    "description": "Run `ddev composer run-script phpstan` to ensure Coding Standards are met (no errors or warnings)"
-                },
-                {
-                    "title": "Linting & Formatting",
-                    "description": "Ensure JS, CSS, and PHP are formatted and linted (`eslint`, `stylelint`)"
-                },
-                {
-                    "title": "No Debug Code in Production",
-                    "description": "Remove `var_dump`, `console.log`, `error_log`, and debugging functions"
-                },
-                {
-                    "title": "No Direct DB Queries",
-                    "description": "All database interactions go through WP_Query, get_posts, or WordPress APIs"
-                }
-            ]
+          "title": "PHP Stan Passed (LumberMill)",
+          "description": "Run `ddev composer run-script phpstan` to ensure Coding Standards are met (no errors or warnings)"
         },
         {
-            "name": "Build & Deployment",
-            "items": [
-                {
-                    "title": "Theme Production Build Compiles Successfully",
-                    "description": "Theme CSS and JS assets are built without errors (`ddev npm run build`)"
-                },
-                {
-                    "title": "Environment Variables (LumberMill)",
-                    "description": "Ensure all `.env` variables (for Bedrock or similar) are defined, and `.env.example` is updated"
-                },
-                {
-                    "title": "Caching & Deployment Strategy",
-                    "description": "Verify caching (object cache, page cache, CDN) and deployment scripts are properly configured `w3 total cache`"
-                },
-                {
-                    "title": "WP_DEBUG Disabled",
-                    "description": "Ensure `WP_DEBUG`, `SCRIPT_DEBUG`, and `DISPLAY_ERRORS` are set to false in production"
-                }
-            ]
+          "title": "Linting & Formatting",
+          "description": "Ensure JS, CSS, and PHP are formatted and linted (`eslint`, `stylelint`)"
         },
         {
-            "name": "Performance & SEO",
-            "items": [
-                {
-                    "title": "PageSpeed Insights / Lighthouse",
-                    "description": "Performance score > 75, Accessibility > 90, Best Practices > 90, SEO > 90"
-                },
-                {
-                    "title": "SEO Metadata",
-                    "description": "Yoast SEO (or similar) is configured with meta titles, descriptions, and Open Graph data"
-                },
-                {
-                    "title": "Image Optimization",
-                    "description": "Ensure images are compressed (e.g., `https://wordpress.org/plugins/webp-uploads/`) and lazy-loaded"
-                },
-                {
-                    "title": "Permalinks & Sitemap",
-                    "description": "Pretty permalinks enabled, XML sitemap accessible and listed in `robots.txt` aka Yoast SEO is installed and activated"
-                },
-                {
-                    "title": "Clean URL Structure",
-                    "description": "Verify no unnecessary query strings or duplicate slugs"
-                }
-            ]
+          "title": "No Debug Code in Production",
+          "description": "Remove `var_dump`, `console.log`, `error_log`, and debugging functions"
         },
         {
-            "name": "Security & Best Practices",
-            "items": [
-                {
-                    "title": "Secure Configuration",
-                    "description": "Disable file editing, hide PHP errors, enforce strong passwords, correct file permissions"
-                },
-                {
-                    "title": "HTTPS & SSL",
-                    "description": "Ensure HTTPS is enforced and SSL certificate is valid"
-                },
-                {
-                    "title": "No Exposed Sensitive Data",
-                    "description": "No API keys, database info, or admin URLs exposed publicly"
-                }
-            ]
-        },
-        {
-            "name": "Browser & Device Testing",
-            "items": [
-                {
-                    "title": "Cross-Browser Testing",
-                    "description": "Verify layout and functionality on Chrome, Firefox, Safari, and Edge"
-                },
-                {
-                    "title": "Responsive Testing",
-                    "description": "Test on mobile, tablet, and desktop viewports"
-                }
-            ]
-        },
-        {
-            "name": "Content & Functionality",
-            "items": [
-                {
-                    "title": "Forms & Email Delivery",
-                    "description": "Test all contact forms and ensure emails are delivered (use SMTP or Mailgun if needed)"
-                },
-                {
-                    "title": "404 & Redirects",
-                    "description": "Check custom 404 page and confirm redirects (301/302) are configured correctly"
-                },
-                {
-                    "title": "Search & Pagination",
-                    "description": "Ensure search results and pagination work properly on all templates"
-                }
-            ]
+          "title": "No Direct DB Queries",
+          "description": "All database interactions go through WP_Query, get_posts, or WordPress APIs"
         }
-    ]
+      ]
+    },
+    {
+      "name": "Build & Deployment",
+      "items": [
+        {
+          "title": "Theme Production Build Compiles Successfully",
+          "description": "Theme CSS and JS assets are built without errors (`ddev npm run build`)"
+        },
+        {
+          "title": "Environment Variables (LumberMill)",
+          "description": "Ensure all `.env` variables (for Bedrock or similar) are defined, and `.env.example` is updated"
+        },
+        {
+          "title": "Caching & Deployment Strategy",
+          "description": "Verify caching (object cache, page cache, CDN) and deployment scripts are properly configured `w3 total cache`"
+        },
+        {
+          "title": "WP_DEBUG Disabled",
+          "description": "Ensure `WP_DEBUG`, `SCRIPT_DEBUG`, and `DISPLAY_ERRORS` are set to false in production"
+        }
+      ]
+    },
+    {
+      "name": "Performance & SEO",
+      "items": [
+        {
+          "title": "PageSpeed Insights / Lighthouse",
+          "description": "Performance score > 75, Accessibility > 90, Best Practices > 90, SEO > 90"
+        },
+        {
+          "title": "SEO Metadata",
+          "description": "Yoast SEO (or similar) is configured with meta titles, descriptions, and Open Graph data"
+        },
+        {
+          "title": "Image Optimization",
+          "description": "Ensure images are compressed (e.g., `https://wordpress.org/plugins/webp-uploads/`) and lazy-loaded"
+        },
+        {
+          "title": "Permalinks & Sitemap",
+          "description": "Pretty permalinks enabled, XML sitemap accessible and listed in `robots.txt` aka Yoast SEO is installed and activated"
+        },
+        {
+          "title": "Clean URL Structure",
+          "description": "Verify no unnecessary query strings or duplicate slugs"
+        }
+      ]
+    },
+    {
+      "name": "Security & Best Practices",
+      "items": [
+        {
+          "title": "Secure Configuration",
+          "description": "Disable file editing, hide PHP errors, enforce strong passwords, correct file permissions"
+        },
+        {
+          "title": "HTTPS & SSL",
+          "description": "Ensure HTTPS is enforced and SSL certificate is valid"
+        },
+        {
+          "title": "No Exposed Sensitive Data",
+          "description": "No API keys, database info, or admin URLs exposed publicly"
+        },
+        {
+          "title": "Forms Have Anti Spam Measures",
+          "description": "reCAPTCHA and/or WP Armour is/are installed"
+        }
+      ]
+    },
+    {
+      "name": "Browser & Device Testing",
+      "items": [
+        {
+          "title": "Cross-Browser Testing",
+          "description": "Verify layout and functionality on Chrome, Firefox, Safari, and Edge"
+        },
+        {
+          "title": "Responsive Testing",
+          "description": "Test on mobile, tablet, and desktop viewports"
+        }
+      ]
+    },
+    {
+      "name": "Content & Functionality",
+      "items": [
+        {
+          "title": "Forms & Email Delivery",
+          "description": "Test all contact forms and ensure emails are delivered (use SMTP or Mailpit if needed)"
+        },
+        {
+          "title": "404 & Redirects",
+          "description": "Check custom 404 page and confirm redirects (301/302) are configured correctly"
+        },
+        {
+          "title": "Search & Pagination",
+          "description": "Ensure search results and pagination work properly on all templates"
+        }
+      ]
+    }
+  ]
 }

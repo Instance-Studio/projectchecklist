@@ -2,6 +2,9 @@ import { useLocalStorage } from '@uidotdev/usehooks';
 import Category from '../components/category';
 import PageHeading from '../components/page-heading';
 import data from '../data/payloadcms.json';
+import Confetti from '../components/confetti';
+import { countItems } from '../util/count-items';
+import { useMemo } from 'react';
 
 export default function PayloadCMS() {
     const [localState, setLocalState] = useLocalStorage<string[]>(
@@ -17,6 +20,10 @@ export default function PayloadCMS() {
             setLocalState(newState);
         }
     }
+
+    const itemCount = useMemo(() => countItems(data), []);
+
+    const completed = itemCount === localState.length;
 
     return (
         <div className="text-white">
@@ -42,6 +49,8 @@ export default function PayloadCMS() {
                     />
                 ))}
             </div>
+
+            <Confetti start={completed} />
         </div>
     );
 }
