@@ -105,6 +105,14 @@
       "name": "Content & Functionality",
       "items": [
         {
+          "title": "Site Language Configuration",
+          "description": "WordPress site language is set correctly in Settings → General to match the target audience region"
+        },
+        {
+          "title": "Time Zone / Format Configuration",
+          "description": "WordPress time zone and date time formats are set correctly in Settings → General to match the target audience region"
+        },
+        {
           "title": "Forms & Email Delivery",
           "description": "Test all contact forms and ensure emails are delivered (use SMTP or Mailpit if needed)"
         },
