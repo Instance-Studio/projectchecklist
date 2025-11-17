@@ -37,7 +37,7 @@ export default function Category({ category, onClick, state }: Props) {
 
             {category.items.map((item) => (
                 <label
-                    className="p-4 block border-white border-b-1 has-checked:bg-green-800 has-checked:text-white"
+                    className="p-4 block border-white border-b-1 has-checked:bg-green-800 has-checked:text-white cursor-pointer"
                     key={item.title}
                 >
                     <p className="text-lg mb-2">{item.title}</p>
