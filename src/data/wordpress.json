@@ -64,6 +64,10 @@
         {
           "title": "Clean URL Structure",
           "description": "Verify no unnecessary query strings or duplicate slugs"
+        },
+        {
+          "title": "Favicon",
+          "description": "Check that favicon file is updated with the one supplied by the designer/client"
         }
       ]
     },

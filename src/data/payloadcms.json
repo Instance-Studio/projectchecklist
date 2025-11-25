@@ -56,6 +56,10 @@
         {
           "title": "Sitemap Accessibility",
           "description": "Check that `robots.txt` file points to the sitemap and it's properly accessible to search engines"
+        },
+        {
+          "title": "Favicon",
+          "description": "Check that favicon file is updated with the one supplied by the designer/client"
         }
       ]
     },
