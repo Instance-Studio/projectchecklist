@@ -51,7 +51,7 @@
         },
         {
           "title": "SEO Metadata",
-          "description": "Yoast SEO (or similar) is configured with meta titles, descriptions, and Open Graph data"
+          "description": "Yoast SEO (or similar) is configured with meta titles, descriptions, and Open Graph data (use for example `check-site-meta` to check)"
         },
         {
           "title": "Image Optimization",

@@ -43,7 +43,7 @@
         },
         {
           "title": "Meta Tags Verification",
-          "description": "All pages have proper meta tags, titles, and Open Graph data"
+          "description": "All pages have proper meta tags, titles, and Open Graph data (use for example `check-site-meta` to check)"
         },
         {
           "title": "Image Optimization",
