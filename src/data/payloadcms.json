@@ -1,100 +1,100 @@
 {
-  "items": [
-    {
-      "name": "Code Quality & Standards",
-      "items": [
+    "items": [
         {
-          "title": "Linting Passed",
-          "description": "lint command runs with no errors or warnings using `ddev pnpm lint`"
+            "name": "Code Quality & Standards",
+            "items": [
+                {
+                    "title": "Linting Passed",
+                    "description": "Run `ddev pnpm lint` and verify it completes with zero errors and warnings"
+                },
+                {
+                    "title": "Code Formatting Applied",
+                    "description": "Ensure consistent formatting across all files by running `ddev pnpm format`"
+                },
+                {
+                    "title": "No Console Logs in Production",
+                    "description": "Remove all console.log statements or properly gate them so they don't run in production"
+                }
+            ]
         },
         {
-          "title": "Code Formatting Applied",
-          "description": "formatting is consistent across all files `ddev pnpm format`"
+            "name": "Build & Deployment",
+            "items": [
+                {
+                    "title": "Successful Production Build",
+                    "description": "Run `pnpm run build` and verify it completes without any errors or warnings"
+                },
+                {
+                    "title": "Environment Variables",
+                    "description": "All required environment variables are properly configured for both build and runtime environments, and documented in .env.example"
+                },
+                {
+                    "title": "Create Migration Files",
+                    "description": "Run `ddev pnpm payload migrate:create` to generate any required database migration files"
+                }
+            ]
         },
         {
-          "title": "No Console Logs in Production",
-          "description": "Remove or properly gate console.log statements for production"
+            "name": "Performance & SEO",
+            "items": [
+                {
+                    "title": "Lighthouse Scores (Mobile)",
+                    "description": "Achieve Performance score > 75, Accessibility > 90, Best Practices > 90, and SEO > 90 on mobile devices",
+                    "extra": "Run tests against staging or production environments. Do not use development environments like 'next dev' as they will skew results.",
+                    "command": "npx unlighthouse --site example.com"
+                },
+                {
+                    "title": "Meta Tags Verification",
+                    "description": "Verify all pages have proper meta tags, titles, and Open Graph data. Use tools like 'check-site-meta' to validate"
+                },
+                {
+                    "title": "Image Optimization",
+                    "description": "Ensure all images use the Next.js Image component with proper sizing attributes"
+                },
+                {
+                    "title": "Sitemap Generation",
+                    "description": "Verify the XML sitemap is automatically generated at /sitemap_index.xml and includes all important pages"
+                },
+                {
+                    "title": "Sitemap Accessibility",
+                    "description": "Confirm the robots.txt file correctly points to the sitemap and that search engines can access it"
+                },
+                {
+                    "title": "Favicon",
+                    "description": "Verify the favicon file has been updated with the version provided by the designer or client"
+                }
+            ]
+        },
+        {
+            "name": "Security & Best Practices",
+            "items": [
+                {
+                    "title": "Sensitive Data Exposure",
+                    "description": "Verify no API keys or sensitive data are exposed to the client-side code"
+                }
+            ]
+        },
+        {
+            "name": "Browser & Device Testing",
+            "items": [
+                {
+                    "title": "Cross-Browser Testing",
+                    "description": "Test the application in all major browsers: Chrome, Firefox, Safari, and Edge"
+                },
+                {
+                    "title": "Mobile Responsiveness",
+                    "description": "Verify the layout functions correctly and looks good on mobile devices"
+                }
+            ]
+        },
+        {
+            "name": "Content & Functionality",
+            "items": [
+                {
+                    "title": "HTML Lang Attribute",
+                    "description": "Verify the HTML lang attribute (on the html element) is correctly set to match the target audience region"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "Build & Deployment",
-      "items": [
-        {
-          "title": "Successful Production Build",
-          "description": "`pnpm run build` completes without errors or warnings"
-        },
-        {
-          "title": "Environment Variables",
-          "description": "All required environment variables are properly set for build and are present in the .env.example file"
-        },
-        {
-          "title": "Create Migration Files",
-          "description": "`ddev pnpm payload migrate:create` has been run to generate any required migration files"
-        }
-      ]
-    },
-    {
-      "name": "Performance & SEO",
-      "items": [
-        {
-          "title": "Lighthouse Scores (Mobile)",
-          "description": "Performance score > 75, Accessibility > 90, Best Practices > 90, SEO > any",
-          "extra": "Tests must be run against staging/production environments, do not use development environment like `next dev`",
-          "command": "command to run: `npx unlighthouse --site example.com`"
-        },
-        {
-          "title": "Meta Tags Verification",
-          "description": "All pages have proper meta tags, titles, and Open Graph data (use for example `check-site-meta` to check)"
-        },
-        {
-          "title": "Image Optimization",
-          "description": "Images use Next.js Image component with proper sizing"
-        },
-        {
-          "title": "Sitemap Generation",
-          "description": "Verify XML sitemap is automatically generated at `/sitemap_index.xml` and includes all important pages"
-        },
-        {
-          "title": "Sitemap Accessibility",
-          "description": "Check that `robots.txt` file points to the sitemap and it's properly accessible to search engines"
-        },
-        {
-          "title": "Favicon",
-          "description": "Check that favicon file is updated with the one supplied by the designer/client"
-        }
-      ]
-    },
-    {
-      "name": "Security & Best Practices",
-      "items": [
-        {
-          "title": "Sensitive Data Exposure",
-          "description": "No API keys or sensitive data exposed to client-side"
-        }
-      ]
-    },
-    {
-      "name": "Browser & Device Testing",
-      "items": [
-        {
-          "title": "Cross-Browser Testing",
-          "description": "Test in major browsers (Chrome, Firefox, Safari, Edge)"
-        },
-        {
-          "title": "Mobile Responsiveness",
-          "description": "Layout works correctly on mobile devices"
-        }
-      ]
-    },
-    {
-      "name": "Content & Functionality",
-      "items": [
-        {
-          "title": "HTML Lang Attribute",
-          "description": "HTML lang attribute (found on the html element) is set correctly to match the target audience region"
-        }
-      ]
-    }
-  ]
+    ]
 }
