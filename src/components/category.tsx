@@ -4,6 +4,8 @@ interface Props {
         items: {
             title: string;
             description: string;
+            extra?: string;
+            command?: string;
         }[];
     };
     onClick: (name: string, done: boolean) => void;
@@ -37,13 +39,30 @@ export default function Category({ category, onClick, state }: Props) {
 
             {category.items.map((item) => (
                 <label
-                    className="p-4 block border-white border-b-1 has-checked:bg-green-800 has-checked:text-white cursor-pointer"
+                    className="p-4 block border-white border-b has-checked:bg-green-800 has-checked:text-white cursor-pointer"
                     key={item.title}
                 >
                     <p className="text-lg mb-2">{item.title}</p>
                     <p className="text-sm leading-relaxed">
                         {renderDescription(item.description)}
                     </p>
+
+                    {(item.extra || item.command) && (
+                        <details>
+                            <summary>Extra Information</summary>
+                            {item.extra && (
+                                <p className="text-md text-red-400 leading-relaxed mt-2">
+                                    {renderDescription(item.extra)}
+                                </p>
+                            )}
+
+                            {item.command && (
+                                <p className="text-xs leading-relaxed mt-2">
+                                    {renderDescription(item.command)}
+                                </p>
+                            )}
+                        </details>
+                    )}
 
                     <input
                         onChange={(e) =>

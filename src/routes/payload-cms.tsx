@@ -31,7 +31,7 @@ export default function PayloadCMS() {
 
             <div className="container text-center">
                 <button
-                    className="border-1 border-white py-2 px-4 cursor-pointer hover:bg-white hover:text-black"
+                    className="border border-white py-2 px-4 cursor-pointer hover:bg-white hover:text-black"
                     type="button"
                     onClick={() => setLocalState([])}
                 >

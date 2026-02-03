@@ -39,7 +39,9 @@
       "items": [
         {
           "title": "Lighthouse Scores (Mobile)",
-          "description": "Performance score > 75, Accessibility > 90, Best Practices > 90, SEO > any"
+          "description": "Performance score > 75, Accessibility > 90, Best Practices > 90, SEO > any",
+          "extra": "Tests must be run against staging/production environments, do not use development environment like `next dev`",
+          "command": "command to run: `npx unlighthouse --site example.com`"
         },
         {
           "title": "Meta Tags Verification",
