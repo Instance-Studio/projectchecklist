@@ -43,6 +43,15 @@
       ]
     },
     {
+      "name": "Migration & Redirects",
+      "items": [
+        {
+          "title": "Redirects Configured",
+          "description": "If this project replaces an existing website, configure redirects from all old URLs to their new equivalents to preserve SEO and avoid broken links"
+        }
+      ]
+    },
+    {
       "name": "Performance & SEO",
       "items": [
         {
