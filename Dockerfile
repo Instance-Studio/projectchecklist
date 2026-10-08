@@ -4,10 +4,10 @@ FROM node:24.13.0-alpine AS builder
 WORKDIR /app
 
 # Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@10.28.2 --activate
 
 # Copy dependency files
-COPY pnpm-lock.yaml package.json ./
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
 
 # Install dependencies (faster & reproducible)
 RUN pnpm install --frozen-lockfile
