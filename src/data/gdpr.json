@@ -1,0 +1,101 @@
+{
+    "items": [
+        {
+            "name": "Cookie Banner",
+            "items": [
+                {
+                    "title": "Cookie Banner Needed",
+                    "description": "Check which cookies and tools the site uses. If it uses analytics, ad pixels or embeds (YouTube, Google Maps, Instagram), a cookie banner is required. If it only uses necessary cookies (cart, language, login), no banner is needed."
+                },
+                {
+                    "title": "No Tracking Before Consent",
+                    "description": "Open the site in a private window and do not click the banner. In DevTools check Application > Cookies and the Network tab: only necessary cookies and requests may appear. Scripts added directly in the code (for example Google Tag Manager) must also wait for consent."
+                },
+                {
+                    "title": "Decline Blocks Tracking",
+                    "description": "Click Decline and reload the page. Verify in DevTools that no analytics or marketing cookies are set and no tracking requests are sent."
+                },
+                {
+                    "title": "Accept and Decline on First Screen",
+                    "description": "Accept and Decline are both on the first layer of the banner, with the same size and style. Declining must not take more clicks than accepting."
+                },
+                {
+                    "title": "No Pre-ticked Options",
+                    "description": "In the banner settings, all categories except necessary cookies are switched off by default."
+                },
+                {
+                    "title": "Banner Text Is Complete",
+                    "description": "The banner explains what data is collected (for example IP address), for which purposes (analytics, marketing), which partners receive it (for example Google, Meta), and that the choice can be changed later."
+                },
+                {
+                    "title": "Banner Links to Policies",
+                    "description": "The banner contains a link to the privacy policy and to the cookie list."
+                },
+                {
+                    "title": "Cookie Settings Link in Footer",
+                    "description": "Every page has a \"Cookie settings\" link in the footer that reopens the banner, so visitors can change or withdraw their consent at any time."
+                }
+            ]
+        },
+        {
+            "name": "Privacy Policy",
+            "items": [
+                {
+                    "title": "Privacy Policy Linked in Footer",
+                    "description": "There is one privacy policy page and it is linked in the footer of every page. Remove or redirect old or duplicate privacy pages."
+                },
+                {
+                    "title": "Third Parties Named",
+                    "description": "The privacy policy lists all services that receive visitor data, such as analytics, payment providers, newsletter tool, booking tool and shipping company."
+                },
+                {
+                    "title": "Cookies Described as Consent",
+                    "description": "The privacy policy states that analytics and marketing cookies are only used after the visitor gives consent. It must not call them \"legitimate interest\" if the banner asks for consent."
+                },
+                {
+                    "title": "Retention Periods",
+                    "description": "The privacy policy states how long personal data is kept, for example \"accounts are deleted after 2 years without use\". A general \"as long as necessary\" is not enough."
+                }
+            ]
+        },
+        {
+            "name": "Cookies Page",
+            "items": [
+                {
+                    "title": "Cookie List Available",
+                    "description": "There is a list of all cookies with name, provider, purpose and duration, on a separate cookies page or at the bottom of the privacy policy. Not needed if the site only uses necessary cookies."
+                },
+                {
+                    "title": "Cookie List Matches the Site",
+                    "description": "Open the site in a private window, click Accept and check in DevTools which cookies are set. Every cookie must appear in the cookie list."
+                }
+            ]
+        },
+        {
+            "name": "Forms",
+            "items": [
+                {
+                    "title": "Privacy Notice on Forms",
+                    "description": "Every form that collects personal data (newsletter, contact, booking) shows a short line explaining what the data is used for, with a link to the privacy policy."
+                },
+                {
+                    "title": "No Pre-ticked Marketing Checkboxes",
+                    "description": "Newsletter and marketing checkboxes (for example in checkout or account creation) are unchecked by default."
+                },
+                {
+                    "title": "Unsubscribe Link in Newsletters",
+                    "description": "Every newsletter email contains a working unsubscribe link."
+                }
+            ]
+        },
+        {
+            "name": "Company Info",
+            "items": [
+                {
+                    "title": "KVK and VAT Number Shown",
+                    "description": "The KVK number is visible on the website, for example in the footer. Webshops must also show their VAT number."
+                }
+            ]
+        }
+    ]
+}

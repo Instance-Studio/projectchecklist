@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router';
 import Home from './routes/home.tsx';
 import WordPress from './routes/word-press.tsx';
 import PayloadCMS from './routes/payload-cms.tsx';
+import GDPR from './routes/gdpr.tsx';
 import './global.css';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
                 <Route index element={<Home />} />
                 <Route path="/wordpress" element={<WordPress />} />
                 <Route path="/payloadcms" element={<PayloadCMS />} />
+                <Route path="/gdpr" element={<GDPR />} />
             </Routes>
         </BrowserRouter>
     </StrictMode>,

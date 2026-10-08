@@ -22,6 +22,13 @@ export default function Home() {
                     >
                         PayloadCMS
                     </NavLink>
+
+                    <NavLink
+                        className="py-4 px-10 bg-white text-black text-lg"
+                        to="gdpr"
+                    >
+                        GDPR
+                    </NavLink>
                 </div>
             </div>
         </div>
