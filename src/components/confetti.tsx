@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReactConfetti from 'react-confetti';
 
 interface Props {
@@ -7,19 +7,28 @@ interface Props {
 
 export default function Confetti({ start }: Props) {
     const [isRunning, setIsRunning] = useState(false);
+    const [isEmitting, setIsEmitting] = useState(false);
+    const wasComplete = useRef(start);
 
     useEffect(() => {
         let timeout = null;
 
-        if (start) {
+        if (
+            start &&
+            !wasComplete.current &&
+            !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ) {
             setIsRunning(true);
+            setIsEmitting(true);
 
+            // Stop new pieces; the rest fall out before unmounting
             timeout = setTimeout(() => {
-                setIsRunning(false);
-            }, 20000);
+                setIsEmitting(false);
+            }, 4000);
         } else {
             setIsRunning(false);
         }
+        wasComplete.current = start;
 
         return () => {
             if (timeout) {
@@ -34,8 +43,12 @@ export default function Confetti({ start }: Props) {
 
     return (
         <ReactConfetti
-            className="!fixed top-0 left-0 w-full h-full"
+            className="completion-confetti"
+            style={{ position: 'fixed' }}
+            aria-hidden="true"
             numberOfPieces={100}
+            recycle={isEmitting}
+            onConfettiComplete={() => setIsRunning(false)}
         />
     );
 }

@@ -1,20 +1,32 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { BrowserRouter, Link, Route, Routes } from 'react-router';
+import logo from './assets/instance-logo.svg';
+import { checklists } from './checklists.ts';
+import Checklist from './routes/checklist.tsx';
 import Home from './routes/home.tsx';
-import WordPress from './routes/word-press.tsx';
-import PayloadCMS from './routes/payload-cms.tsx';
-import GDPR from './routes/gdpr.tsx';
 import './global.css';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
     <StrictMode>
         <BrowserRouter>
+            <header className="site-header">
+                <Link to="/" className="site-logo">
+                    <img src={logo} alt="Instance" width={92} height={19} />
+                    <span>checklist</span>
+                </Link>
+            </header>
             <Routes>
                 <Route index element={<Home />} />
-                <Route path="/wordpress" element={<WordPress />} />
-                <Route path="/payloadcms" element={<PayloadCMS />} />
-                <Route path="/gdpr" element={<GDPR />} />
+                {checklists.map((checklist) => (
+                    <Route
+                        key={checklist.slug}
+                        path={`/${checklist.slug}`}
+                        element={
+                            <Checklist key={checklist.slug} {...checklist} />
+                        }
+                    />
+                ))}
             </Routes>
         </BrowserRouter>
     </StrictMode>,

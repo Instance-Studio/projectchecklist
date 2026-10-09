@@ -5,11 +5,11 @@
             "items": [
                 {
                     "title": "Linting Passed",
-                    "description": "Run `ddev pnpm lint` and verify it completes with zero errors and warnings"
+                    "description": "Run ``ddev pnpm lint`` and verify it completes with zero errors and warnings"
                 },
                 {
                     "title": "Code Formatting Applied",
-                    "description": "Ensure consistent formatting across all files by running `ddev pnpm format`"
+                    "description": "Ensure consistent formatting across all files by running ``ddev pnpm format``"
                 },
                 {
                     "title": "No Console Logs in Production",
@@ -22,7 +22,7 @@
             "items": [
                 {
                     "title": "Successful Production Build",
-                    "description": "Run `pnpm run build` and verify it completes without any errors or warnings"
+                    "description": "Run ``pnpm run build`` and verify it completes without any errors or warnings"
                 },
                 {
                     "title": "Environment Variables",
@@ -30,7 +30,7 @@
                 },
                 {
                     "title": "Create Migration Files",
-                    "description": "Run `ddev pnpm payload migrate:create` to generate any required database migration files"
+                    "description": "Run ``ddev pnpm payload migrate:create`` to generate any required database migration files"
                 }
             ]
         },

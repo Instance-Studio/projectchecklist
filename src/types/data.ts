@@ -1,6 +1,8 @@
 export type Item = {
     title: string;
     description: string;
+    extra?: string;
+    command?: string;
 };
 
 export type Category = {

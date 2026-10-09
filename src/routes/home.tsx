@@ -1,36 +1,19 @@
 import { NavLink } from 'react-router';
+import { checklists } from '../checklists';
 
 export default function Home() {
     return (
-        <div className="w-full min-h-screen text-white flex items-center justify-center">
-            <div className="container py-10">
-                <h1 className="mb-8 text-4xl font-bol text-center">
-                    Select Project Type
-                </h1>
+        <main className="container home">
+            <title>Instance checklist</title>
+            <h1 className="home-title">Select a checklist</h1>
 
-                <div className="flex gap-10 items-center justify-center">
-                    <NavLink
-                        className="py-4 px-10 bg-white text-black text-lg"
-                        to="wordpress"
-                    >
-                        WordPress
+            <nav className="project-types" aria-label="Checklists">
+                {checklists.map(({ slug, label }) => (
+                    <NavLink key={slug} to={slug}>
+                        {label}
                     </NavLink>
-
-                    <NavLink
-                        className="py-4 px-10 bg-white text-black text-lg"
-                        to="payloadcms"
-                    >
-                        PayloadCMS
-                    </NavLink>
-
-                    <NavLink
-                        className="py-4 px-10 bg-white text-black text-lg"
-                        to="gdpr"
-                    >
-                        GDPR
-                    </NavLink>
-                </div>
-            </div>
-        </div>
+                ))}
+            </nav>
+        </main>
     );
 }

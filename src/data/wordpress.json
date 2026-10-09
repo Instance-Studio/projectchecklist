@@ -5,7 +5,7 @@
       "items": [
         {
           "title": "PHP Stan Passed (LumberMill)",
-          "description": "Run `ddev composer run-script phpstan` to ensure Coding Standards are met (no errors or warnings)"
+          "description": "Run ``ddev composer run-script phpstan`` to ensure Coding Standards are met (no errors or warnings)"
         },
         {
           "title": "Linting & Formatting",
@@ -26,7 +26,7 @@
       "items": [
         {
           "title": "Theme Production Build Compiles Successfully",
-          "description": "Theme CSS and JS assets are built without errors (`ddev npm run build`)"
+          "description": "Theme CSS and JS assets are built without errors (``ddev npm run build``)"
         },
         {
           "title": "Environment Variables (LumberMill)",

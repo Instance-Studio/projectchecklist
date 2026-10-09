@@ -1,16 +1,417 @@
 @import "tailwindcss";
 
-/* biome-ignore lint: lint/suspicious/noUnknownAtRules */
-@utility container {
-    width: 100%;
-    max-width: 100%;
+@font-face {
+    font-family: "Sequel Sans";
+    src: url("./assets/sequel-sans.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Martian Mono";
+    src: url("./assets/martian-mono.woff2") format("woff2");
+    font-weight: 100 800;
+    font-display: swap;
+}
+
+:root {
+    font-family: "Sequel Sans", Arial, sans-serif;
+    color-scheme: dark;
+    color: #fff;
+    background: #050505;
+    -webkit-font-smoothing: antialiased;
+    --mono: "Martian Mono", monospace;
+    --muted: #a0a0a0;
+    --line: #292929;
+    --accent: #aefe8b;
+    scroll-padding-top: 100px;
+    interpolate-size: allow-keywords;
 }
 
 body {
-    background-color: #080808;
+    margin: 0;
+}
+button,
+input {
+    font: inherit;
+}
+a {
+    text-decoration: none;
+}
+button,
+a,
+label,
+summary,
+input[type="checkbox"] {
+    cursor: pointer;
+}
+button,
+a,
+summary,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 5px;
+}
+::selection {
+    background: var(--accent);
+    color: #050505;
+}
+.container {
+    width: min(800px, calc(100% - 48px));
+    margin-inline: auto;
+}
+.site-header {
+    padding: 28px 32px;
+}
+.site-logo {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+}
+.site-logo span {
+    color: var(--muted);
+    font-size: 23px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100svh - 75px);
+    padding-block: 48px;
+}
+h1 {
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+}
+.home-title {
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 18px;
+    letter-spacing: 0;
+}
+.project-types {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--line);
+}
+.project-types a {
+    padding: 22px 16px;
+    border-bottom: 1px solid var(--line);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    transition: background-color 160ms ease-out;
+}
+.project-types a:hover {
+    background: #111;
+}
+.page-heading {
+    padding-top: 44px;
+}
+.back-link {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 0 28px -10px;
+    color: var(--muted);
+}
+.heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.reset-button {
+    border: 1px solid #414141;
+    border-radius: 4px;
+    padding: 10px 14px;
+    color: var(--muted);
+    background: transparent;
+    font: 10px var(--mono);
+}
+.progress {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin-top: 20px;
+    padding-block: 16px;
+    background: #050505;
+    box-shadow: 0 8px 0 #050505;
+}
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font: 12px var(--mono);
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+progress {
+    appearance: none;
+    display: block;
+    border: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--line);
+    color: var(--accent);
+}
+progress::-webkit-progress-bar {
+    background: var(--line);
+}
+progress::-webkit-progress-value {
+    background: var(--accent);
+    transition: width 180ms ease-out;
+}
+progress::-moz-progress-bar {
+    background: var(--accent);
+}
+.checklist-list {
+    padding-bottom: 64px;
+}
+.category {
+    margin-top: 32px;
+}
+.category h2 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.category-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 18px;
+    list-style: none;
+    transition: margin-bottom 250ms ease-out;
+}
+.category-heading::-webkit-details-marker {
+    display: none;
+}
+.category-heading::after {
+    content: "−";
+    width: 1ch;
+    color: var(--muted);
+    font: 14px var(--mono);
+}
+.category::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+        block-size 250ms ease-out,
+        content-visibility 250ms allow-discrete;
+}
+.category[open]::details-content {
+    block-size: auto;
+}
+.category:not([open]) > .category-heading {
+    margin-bottom: 0;
+}
+.category:not([open]) > .category-heading::after {
+    content: "+";
+}
+.category-count {
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--muted);
+    font: 11px var(--mono);
+}
+.category:not(:has(input:not(:checked))) .category-count {
+    color: var(--accent);
+}
+.checklist-item {
+    border-bottom: 1px solid var(--line);
+    background: #111;
+    transition: background-color 160ms ease-out;
+}
+.item-label {
+    position: relative;
+    display: block;
+    padding: 24px 20px;
+    cursor: pointer;
+}
+.item-label:has(input:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+.item-label input,
+.checklist-item summary {
+    scroll-margin-block: 100px 24px;
+}
+.item-title {
+    display: block;
+    font-size: 20px;
+    line-height: 1.5;
+    transition: color 160ms ease-out;
+}
+.item-title::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+.item-description {
+    display: block;
+    margin-top: 8px;
+    color: #b3b3b3;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+.checklist-item:has(input:checked) {
+    background: #102116;
+}
+.item-label:has(input:checked) .item-title {
+    color: #9fc5a7;
+    text-decoration: line-through;
+    text-decoration-color: #73947a;
+}
+.item-label:has(input:checked) .item-description,
+.checklist-item:has(input:checked) details {
+    color: #8fa996;
+}
+.code-snippet {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    max-width: 100%;
+    padding: 0 0 0 7px;
+    border: 1px solid #3e4a5b;
+    border-radius: 4px;
+    background: #1c2532;
+    color: #e4e9f0;
+    vertical-align: baseline;
+    cursor: text;
+}
+.inline-code {
+    padding-right: 7px;
+}
+.code-snippet code,
+.inline-code {
+    min-width: 0;
+    font:
+        13px / 1.5 ui-monospace,
+        "SFMono-Regular",
+        Menlo,
+        Consolas,
+        monospace;
+    user-select: text;
+}
+.copy-button {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-width: 26px;
+    min-height: 26px;
+    padding: 4px;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    background: transparent;
+    color: #b7c4d5;
+}
+.copy-button[data-status="copied"] {
+    color: #a3e7b0;
+}
+.copy-button[data-status="error"] {
+    color: #fca5a5;
+    font-size: 11px;
+}
+.checklist-item details {
+    margin: -4px 20px 18px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+.checklist-item summary {
+    width: fit-content;
+    min-height: 28px;
+    padding-block: 6px;
+    font: 11px var(--mono);
+}
+.checklist-item details p {
+    margin-top: 12px;
+    color: #fca5a5;
+}
+.checklist-item pre {
+    margin-top: 12px;
+}
+.checklist-item pre .code-snippet {
+    display: flex;
+    padding: 6px 8px 6px 12px;
+}
+.checklist-item pre code {
+    flex: 1;
+    overflow-x: auto;
 }
 
-.container {
-    width: min(800px, calc(100% - 40px));
-    margin-inline: auto;
+.completion-confetti {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+@media (max-width: 560px) {
+    .site-header {
+        padding: 20px 24px;
+    }
+    .page-heading {
+        padding-top: 20px;
+    }
+    .back-link {
+        margin-bottom: 26px;
+    }
+    .heading-row {
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .heading-row h1 {
+        font-size: 30px;
+    }
+    .category-heading {
+        flex-wrap: wrap;
+        gap: 6px 16px;
+    }
+    .category h2 {
+        flex-basis: 100%;
+        font-size: 22px;
+    }
+    .category-count {
+        margin-left: 0;
+    }
+    .category-heading::after {
+        margin-left: auto;
+    }
+    .item-label {
+        padding: 20px 16px;
+    }
+    .item-title {
+        font-size: 18px;
+    }
+    .item-description {
+        font-size: 15px;
+    }
+    .checklist-item details {
+        margin-inline: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .checklist-item,
+    .item-title,
+    .category::details-content,
+    .category-heading,
+    progress::-webkit-progress-value {
+        transition: none;
+    }
 }
