@@ -1,5 +1,3 @@
-import { Link } from 'react-router';
-
 interface Props {
     title: string;
     completed: number;
@@ -16,19 +14,6 @@ export default function PageHeading({
     return (
         <>
             <header className="container page-heading">
-                <Link className="back-link" to="/" aria-label="All checklists">
-                    <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        aria-hidden="true"
-                    >
-                        <path d="M19 12H5m6-6-6 6 6 6" />
-                    </svg>
-                </Link>
                 <div className="heading-row">
                     <h1>{title}</h1>
                     <button

@@ -115,14 +115,6 @@ h1 {
 .page-heading {
     padding-top: 44px;
 }
-.back-link {
-    display: inline-grid;
-    place-items: center;
-    width: 40px;
-    height: 40px;
-    margin: 0 0 28px -10px;
-    color: var(--muted);
-}
 .heading-row {
     display: flex;
     align-items: center;
@@ -367,9 +359,6 @@ progress::-moz-progress-bar {
     }
     .page-heading {
         padding-top: 20px;
-    }
-    .back-link {
-        margin-bottom: 26px;
     }
     .heading-row {
         align-items: flex-start;
